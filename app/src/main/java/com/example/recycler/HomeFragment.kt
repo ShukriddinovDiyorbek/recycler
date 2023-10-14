@@ -28,19 +28,24 @@ class HomeFragment : Fragment() {
         itemList = ArrayList()
         subItemList = ArrayList()
         loadData()
-        binding.homeRecycler.adapter = ItemAdapter(itemList)
+        val layoutManager = LinearLayoutManager(context)
+        layoutManager.reverseLayout = true
+        binding.homeRecycler.layoutManager = layoutManager
+        binding.homeRecycler.adapter = ItemAdapter(itemList.reversed())
+
     }
 
     private fun loadData() {
-        subItemList.add(SubItem(1,true,true,true))
-        subItemList.add(SubItem(1,true,true,true))
-        subItemList.add(SubItem(1,true,true,true))
-        subItemList.add(SubItem(1,true,true,true))
-        itemList.add(Item("title", "ddesc", subItemList))
-        itemList.add(Item("title", "ddesc", subItemList))
-        itemList.add(Item("title", "ddesc", subItemList))
-        itemList.add(Item("title", "ddesc", subItemList))
-        itemList.add(Item("title", "ddesc", subItemList))
+        subItemList.add(SubItem(1,false,false,true))
+        subItemList.add(SubItem(2,false,false,true))
+        subItemList.add(SubItem(3,false,false,true))
+        subItemList.add(SubItem(2,false,true,false))
+        subItemList.add(SubItem(1,true,false,false))
+        itemList.add(Item("title", "ddesc", subItemList,2))
+        itemList.add(Item("title", "ddesc", subItemList,2))
+        itemList.add(Item("title", "ddesc", subItemList,1))
+        itemList.add(Item("title", "ddesc", subItemList,0))
+        itemList.add(Item("title", "ddesc", subItemList,0))
 
     }
 

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_main"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <LinearLayout
@@ -59,11 +62,28 @@
             android:gravity="center"
             android:background="@drawable/item_bordered"
             android:orientation="horizontal">
-            <ImageView
-                android:id="@+id/topic_color"
+            <FrameLayout
+                android:layout_width="24dp"
+                android:layout_height="24dp">
+                <ImageView
+                android:id="@+id/topic_color_green"
                 android:src="@drawable/topic_green"
+                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+                <ImageView
+                    android:id="@+id/topic_color_orange"
+                    android:src="@drawable/topic_orange"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <ImageView
+                    android:id="@+id/topic_color_red"
+                    android:src="@drawable/topic_red"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
